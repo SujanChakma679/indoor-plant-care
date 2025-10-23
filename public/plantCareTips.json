@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Watering Wisdom",
+    "icon": "💧",
+    "description": "Water your plants only when the top inch of soil feels dry. Overwatering is a common mistake—most indoor plants prefer slightly dry conditions rather than soggy soil.",
+    "tip": "Use room-temperature water and let excess drain out of the pot."
+  },
+  {
+    "id": 2,
+    "title": "Sunlight & Placement",
+    "icon": "☀️",
+    "description": "Most indoor plants thrive in bright, indirect sunlight. Direct sunlight can scorch leaves, while too little light can slow their growth.",
+    "tip": "Place your plants near a window with filtered light or use a sheer curtain."
+  },
+  {
+    "id": 3,
+    "title": "Fertilizing Made Simple",
+    "icon": "🌿",
+    "description": "Feed your plants with a balanced, water-soluble fertilizer every 4–6 weeks during the growing season (spring and summer).",
+    "tip": "Avoid fertilizing in winter—plants rest during this time."
+  }
+]

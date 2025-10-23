@@ -1,0 +1,110 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.ibb.co/PZ4Kx6QP/interior-design-with-green-plant-high-angle.jpg",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Aloe Vera",
+    "category": "Medicinal",
+    "price": 15,
+    "rating": 4.5,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "A succulent plant known for its healing properties and air purification.",
+    "image": "https://i.ibb.co/QjTdL9L9/indoor-plants-studio-4.jpg",
+    "providerName": "GreenLife"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Decorative",
+    "price": 45,
+    "rating": 4.7,
+    "availableStock": 5,
+    "careLevel": "Moderate",
+    "description": "A tall, elegant plant perfect for bright indoor spaces.",
+    "image": "https://i.ibb.co/8g0yrq8Y/still-life-with-indoor-plants.jpg",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Peace Lily",
+    "category": "Air Purifier",
+    "price": 22,
+    "rating": 4.6,
+    "availableStock": 8,
+    "careLevel": "Easy",
+    "description": "A beautiful plant that thrives in low light and removes toxins from the air.",
+    "image": "https://i.ibb.co/7x9F8FVT/indoor-plants-studio-3.jpg",
+    "providerName": "HomeGreen"
+  },
+  {
+    "plantId": 5,
+    "plantName": "ZZ Plant",
+    "category": "Air Purifier",
+    "price": 30,
+    "rating": 4.4,
+    "availableStock": 7,
+    "careLevel": "Easy",
+    "description": "A hardy plant that tolerates low light and irregular watering.",
+    "image": "https://i.ibb.co/gM8XM69p/indoor-plants-studio-2.jpg",
+    "providerName": "GreenLife"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Monstera Deliciosa",
+    "category": "Decorative",
+    "price": 35,
+    "rating": 4.9,
+    "availableStock": 6,
+    "careLevel": "Moderate",
+    "description": "A tropical plant with iconic split leaves that adds a modern look to any space.",
+    "image": "https://i.ibb.co/5xzNc9nn/potted-house-plant-against-gray-wall-background.jpg",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Pothos",
+    "category": "Air Purifier",
+    "price": 12,
+    "rating": 4.3,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A trailing plant perfect for shelves or hanging planters, cleans indoor air.",
+    "image": "https://i.ibb.co/gLQgJx6Q/potted-green-plants.jpg",
+    "providerName": "HomeGreen"
+  },
+  {
+    "plantId": 8,
+    "plantName": "Rubber Plant",
+    "category": "Decorative",
+    "price": 28,
+    "rating": 4.6,
+    "availableStock": 9,
+    "careLevel": "Moderate",
+    "description": "A glossy-leaved plant that adds elegance to your indoor environment.",
+    "image": "https://i.ibb.co/zcRq6gK/indoor-plants-studio.jpg",
+    "providerName": "GreenLife"
+  },
+  {
+    "plantId": 9,
+    "plantName": "Dracaena",
+    "category": "Air Purifier",
+    "price": 20,
+    "rating": 4.5,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A versatile plant that can thrive in low to medium light conditions.",
+    "image": "https://i.ibb.co/pk2QLPx/indoor-plants-studio-1.jpg",
+    "providerName": "UrbanGreen Studio"
+  }
+]
