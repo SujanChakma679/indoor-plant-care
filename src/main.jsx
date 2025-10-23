@@ -12,6 +12,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 
 import error from './assets/error-404.png'
+import AuthLayout from './Layout/AuthLayout';
 
 const router = createBrowserRouter([
   {
@@ -21,21 +22,27 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home
-      },
-       {
-        path:'plants',
-        Component: Plants
       }
      
     ]
   },
+     {
+        path:'plants',
+        Component: Plants
+      },
   {
-    path:'/login',
+    path:'auth',
+    element: <AuthLayout></AuthLayout>,
+    children:[
+      {
+    path:'/auth/login',
     Component: Login
   },
   {
-    path: '/register',
+    path: '/auth/register',
     Component: Register
+  }
+    ]
   },
    {
     path: 'profile',

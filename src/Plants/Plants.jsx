@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { FaStar } from "react-icons/fa";
 import { NavLink, useParams } from "react-router";
+import Navbar from "../Components/Navbar/Navbar";
 const plantsPromise = fetch("/plants.json").then((res) => res.json());
 
 const Plants = () => {
@@ -8,6 +9,8 @@ const Plants = () => {
   const { id } = useParams();
   console.log(id)
   return (
+    <section>
+        
     <div className="w-11/12 mx-auto my-10">
       <h2 className="flex justify-center items-center font-bold text-3xl my-5">
         Top Rated Indoor Plants ({plants.length})
@@ -46,6 +49,7 @@ const Plants = () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

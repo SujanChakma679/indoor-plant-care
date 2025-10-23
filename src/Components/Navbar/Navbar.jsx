@@ -39,7 +39,7 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   <div><CgProfile size={28} className='mr-2' /></div>
-      <NavLink to="/login" className="btn bg-green-600 hover:bg-green-700 text-white">
+      <NavLink to="/auth/login" className="btn bg-green-600 hover:bg-green-700 text-white">
              Login
       </NavLink>
       
