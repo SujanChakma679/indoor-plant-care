@@ -3,9 +3,21 @@ import { NavLink } from 'react-router';
 import './Navbar.css'
 
 import { CgProfile } from "react-icons/cg";
+import { AuthContext } from '../../Provider/AuthProvider';
+import { use } from 'react';
+
 
 const Navbar = () => {
+  const { user, logOut } = use(AuthContext)
+  const handleLogout = () =>{
+    console.log('user trying to logout')
+    logOut().then(() => {
+  alert('Sign-out successful.')
+}).catch((error) => {
+  console.log(error)
+});
 
+  }
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/plants'}>Plants</NavLink></li>
@@ -39,9 +51,15 @@ const Navbar = () => {
   </div>
   <div className="navbar-end">
   <div><CgProfile size={28} className='mr-2' /></div>
-      <NavLink to="/auth/login" className="btn bg-green-600 hover:bg-green-700 text-white">
+    
+    {
+      user ? 
+      <button onClick={handleLogout} className='btn bg-green-600 hover:bg-green-700 text-white px-8'>Logout</button>
+      : <NavLink to="/auth/login" className="btn bg-green-600 hover:bg-green-700 text-white px-8">
              Login
       </NavLink>
+    }
+      
       
   </div>
 </div>

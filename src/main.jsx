@@ -13,6 +13,7 @@ import Register from './Pages/Register';
 
 import error from './assets/error-404.png'
 import AuthLayout from './Layout/AuthLayout';
+import AuthProvider from './Provider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router= {router}></RouterProvider>
+    <AuthProvider>
+          <RouterProvider router= {router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )
