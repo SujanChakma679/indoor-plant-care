@@ -1,11 +1,18 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
-import { NavLink } from 'react-router';
+import { NavLink, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
-    const {createUser, setUser} = use(AuthContext)
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  const {createUser, setUser} = use(AuthContext);
+
+  const location = useLocation();
+    const navigate = useNavigate();
 
     const handleRegister = (e) =>{
         e.preventDefault();
@@ -16,15 +23,40 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photo, email, password)
+
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_\-+=<>?{}[\]~]).{6,}$/;
+
+        if(!passwordPattern.test(password)){
+          setError("Password must be at least 6 characters, include 1 uppercase, 1 lowercase, and 1 special character.")
+          return
+        }
+        // reset status
+        setError('');
+        setSuccess(false)
+
+
         createUser(email, password)
-        .then(resut =>{
-            const user = resut.user;
+        .then(result =>{
+            const user = result.user;
             // console.log(user)
             setUser(user)
+            setSuccess(true);
+            form.reset();
+            navigate(location?.state|| '/')
+
+            const profile = {
+              displayName: name,
+              photoURL: photo
+            }
+
+            updateProfile(result.user, profile)
+            .then(() =>{ })
+            .catch()
         })
         .catch(error =>{
             console.log(error.message);
-            alert(error.message)
+            // alert(error.message)
+            setError(error.message)
         })
     }
 
@@ -75,6 +107,12 @@ const Register = () => {
                 />
                 <button type='submit' className="btn btn-neutral mt-4">Register</button>
               </fieldset>
+              {
+                success && <p className='text-green-600'>Account created successfully.</p>
+              }
+              {
+                error && <p className='text-red-600'>{error}</p>
+              }
               </form>
               <p className='font-semibold'>Already Have an Account? Please <NavLink to={'/auth/login'} className='text-green-600 hover:underline'>Login</NavLink></p>
             </div>

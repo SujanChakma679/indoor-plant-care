@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -8,17 +9,17 @@ const Footer = () => {
         <footer className="footer sm:footer-horizontal bg-green-600 text-white p-10">
           <nav>
             <h6 className="footer-title">Services</h6>
-            <a className="link link-hover">Indoor Plant Consultation</a>
-            <a className="link link-hover">Plant Health Check & Care Plans</a>
-            <a className="link link-hover">Home & Office Green Setup</a>
-            <a className="link link-hover">Workshops & Online Training</a>
+            <a href='https://www.ugaoo.com/pages/dr-green?srsltid=AfmBOop3ZZeGnstTc7-Pl3vDMUcDGSmPoaFCHSuWdkvS0I0KA_uJ0Us6' className="link link-hover font-semibold shadow-6xl">Indoor Plant Consultation</a>
+            <a href='https://www.ugaoo.com/pages/dr-green?srsltid=AfmBOop3ZZeGnstTc7-Pl3vDMUcDGSmPoaFCHSuWdkvS0I0KA_uJ0Us6' className="link link-hover font-semibold">Plant Health Check & Care Plans</a>
+            <a href='https://www.ugaoo.com/pages/dr-green?srsltid=AfmBOop3ZZeGnstTc7-Pl3vDMUcDGSmPoaFCHSuWdkvS0I0KA_uJ0Us6' className="link link-hover font-semibold">Home & Office Green Setup</a>
+            <a href='https://www.ugaoo.com/pages/dr-green?srsltid=AfmBOop3ZZeGnstTc7-Pl3vDMUcDGSmPoaFCHSuWdkvS0I0KA_uJ0Us6' className="link link-hover font-semibold">Workshops & Online Training</a>
           </nav>
           <nav>
             <h6 className="footer-title">Company</h6>
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+            <Link className="link link-hover font-semibold">About us</Link>
+            <Link className="link link-hover font-semibold">Contact</Link>
+            <Link className="link link-hover font-semibold">Private Policy</Link>
+            
           </nav>
           <nav>
             <h6 className="footer-title">Social</h6>

@@ -14,6 +14,7 @@ import Register from './Pages/Register';
 import error from './assets/error-404.png'
 import AuthLayout from './Layout/AuthLayout';
 import AuthProvider from './Provider/AuthProvider';
+import PrivateRoute from './Provider/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,9 @@ const router = createBrowserRouter([
   },
    {
     path: 'profile',
-    Component: Profile
+    element: <PrivateRoute>
+      <Profile></Profile>
+    </PrivateRoute>
   },
   {
     path: '/*',
