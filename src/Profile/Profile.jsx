@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Navbar from "../Components/Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);
@@ -30,7 +31,7 @@ const Profile = () => {
     <section>
         <Navbar></Navbar>
         <div className="max-w-md mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">My Profile</h2>
+      <h2 className="text-2xl font-bold mb-4 flex justify-center items-center">My Profile</h2>
 
       <div className="flex flex-col items-center mb-4">
         {user?.photoURL ? (
@@ -63,6 +64,7 @@ const Profile = () => {
           placeholder="Photo URL"
           className="input input-bordered w-full"
         />
+        
         <button
           onClick={handleUpdateProfile}
           className="btn btn-green mt-2"
@@ -73,6 +75,7 @@ const Profile = () => {
 
       {message && <p className="text-green-600 mt-2">{message}</p>}
     </div>
+    <Footer></Footer>
     </section>
   );
 };

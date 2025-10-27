@@ -1,15 +1,15 @@
+
 import React from "react";
 import { NavLink } from "react-router";
 import "./Navbar.css";
-
 import { CgProfile } from "react-icons/cg";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { use } from "react";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+
   const handleLogout = () => {
-    console.log(user);
     logOut()
       .then(() => {
         alert("Sign-out successful.");
@@ -18,6 +18,7 @@ const Navbar = () => {
         console.log(error);
       });
   };
+
   const links = (
     <>
       <li>
@@ -34,6 +35,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar w-11/12 mx-auto">
+      {/* Left Section */}
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -44,13 +46,12 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              {" "}
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
@@ -64,45 +65,58 @@ const Navbar = () => {
           GreenNest
         </NavLink>
       </div>
+
+      {/* Center Section */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <div></div>
+
+      {/* Right Section */}
       <div className="navbar-end">
         {user ? (
-          <div className="flex justify-between items-center">
-            {/* <div><CgProfile size={28} className='mr-2' /></div> */}
-            <div>
-              {user?.photoURL ? 
-              (
+          <div className="dropdown dropdown-end">
+            <div
+              tabIndex={0}
+              role="button"
+              className="flex items-center gap-2 btn btn-ghost"
+            >
+              {user?.photoURL ? (
                 <img
                   src={user.photoURL}
                   alt={user.displayName || "User"}
                   className="w-8 h-8 rounded-full object-cover"
                 />
-              ) 
-              : (<CgProfile size={28} className="mr-2 text-green-700" />)}
+              ) : (
+                <CgProfile size={28} className="text-green-700" />
+              )}
+              <span>{user.displayName}</span>
             </div>
 
-            <div>
-              <div>{user.displayName}</div>
-              <button
-                onClick={handleLogout}
-                className="btn bg-green-600 hover:bg-green-700 text-white px-8"
-              >
-                Logout
-              </button>
-            </div>
+            {/* Dropdown Content */}
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40"
+            >
+              <li>
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
         ) : (
-          <div>
-            <NavLink
-              to="/auth/login"
-              className="btn bg-green-600 hover:bg-green-700 text-white px-8"
-            >
-              Login
-            </NavLink>
-          </div>
+          <NavLink
+            to="/auth/login"
+            className="btn bg-green-600 hover:bg-green-700 text-white px-8"
+          >
+            Login
+          </NavLink>
         )}
       </div>
     </div>
@@ -110,3 +124,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
